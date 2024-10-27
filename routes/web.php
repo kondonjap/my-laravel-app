@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\TodoController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,3 +21,5 @@ Route::get('/', function () {
 Route::get('/hello', function(){
     return 'Hello Laravel';
 });
+
+Route::get('/todo', [TodoController::class,'index']);
