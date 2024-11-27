@@ -25,7 +25,7 @@ class TaskController extends Controller
     public function create()
     {
         // タスク作成フォームのビューを返す
-        return view('tasks.create');
+        return view('create');
     }
 
     /**
