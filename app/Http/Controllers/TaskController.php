@@ -12,7 +12,11 @@ class TaskController extends Controller
      */
     public function index()
     {       
-        return view('todo');
+        // データベースから全タスクを取得
+        $tasks = Task::all(); // タスクモデルを使用してすべてのタスクを取得
+
+        // ビューにデータを渡す
+        return view('tasks.index', ['tasks' => $tasks]);
     }
 
     /**
