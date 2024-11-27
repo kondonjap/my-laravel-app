@@ -24,7 +24,8 @@ class TaskController extends Controller
      */
     public function create()
     {
-        //
+        // タスク作成フォームのビューを返す
+        return view('tasks.create');
     }
 
     /**
@@ -32,18 +33,20 @@ class TaskController extends Controller
      */
     public function store(Request $request)
     {
-        // フォームから送信されたデータをバリデーション
+        // バリデーション
         $request->validate([
             'title' => 'required|max:255',
+            'description' => 'nullable|max:1000',
         ]);
 
-        // 新しいタスクをデータベースに保存
+        // データベースに保存
         Task::create([
             'title' => $request->input('title'),
+            'description' => $request->input('description'),
         ]);
 
         // タスク一覧ページにリダイレクト
-        return redirect('/tasks');
+        return redirect('/tasks')->with('success', 'タスクが作成されました！');
     }
 
     /**

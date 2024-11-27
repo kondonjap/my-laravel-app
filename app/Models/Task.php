@@ -10,5 +10,5 @@ class Task extends Model
     use HasFactory;
 
     // データベースに保存可能なカラムを指定
-    protected $fillable = ['title']; // 'title' を保存可能な属性として指定
+    protected $fillable = ['title', 'description']; // 保存可能なカラムを指定
 }

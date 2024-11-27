@@ -28,3 +28,6 @@ Route::get('/todo', [TodoController::class,'index']);
 Route::get('/tasks', [TaskController::class,'index']);
 
 Route::post('/tasks', [TaskController::class,'store']);
+
+// タスク作成フォーム表示
+Route::get('/tasks/create', [TaskController::class, 'create']);
