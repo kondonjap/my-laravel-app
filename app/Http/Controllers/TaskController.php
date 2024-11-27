@@ -16,7 +16,7 @@ class TaskController extends Controller
         $tasks = Task::all(); // タスクモデルを使用してすべてのタスクを取得
 
         // ビューにデータを渡す
-        return view('tasks.index', ['tasks' => $tasks]);
+        return view('tasks', ['tasks' => $tasks]);
     }
 
     /**
