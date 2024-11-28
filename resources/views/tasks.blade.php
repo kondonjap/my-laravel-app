@@ -24,7 +24,7 @@
     @else
         <ul>
             @foreach ($tasks as $task)
-                <li>{{ $task->title }}</li>
+                <a href="/tasks/{{ $task->id }}">{{ $task->title }}</a>
             @endforeach
         </ul>
     @endif
