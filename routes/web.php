@@ -31,3 +31,6 @@ Route::post('/tasks', [TaskController::class,'store']);
 
 // タスク作成フォーム表示
 Route::get('/create', [TaskController::class, 'create']);
+
+// タスクの詳細表示
+Route::get('/tasks/{id}', [TaskController::class, 'show']);

@@ -54,7 +54,11 @@ class TaskController extends Controller
      */
     public function show(string $id)
     {
-        //
+        // 指定されたIDのタスクを取得
+        $task = Task::findOrFail($id);
+
+        // ビューにデータを渡して表示
+        return view('show', ['task' => $task]);
     }
 
     /**
