@@ -66,7 +66,11 @@ class TaskController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        // 指定されたIDのタスクを取得
+        $task = Task::findOrFail($id);
+
+        // 編集フォームのビューを表示
+        return view('tasks.edit', ['task' => $task]);
     }
 
     /**
