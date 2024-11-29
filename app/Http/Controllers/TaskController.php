@@ -70,7 +70,7 @@ class TaskController extends Controller
         $task = Task::findOrFail($id);
 
         // 編集フォームのビューを表示
-        return view('tasks.edit', ['task' => $task]);
+        return view('edit', ['task' => $task]);
     }
 
     /**

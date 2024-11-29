@@ -34,3 +34,9 @@ Route::get('/create', [TaskController::class, 'create']);
 
 // タスクの詳細表示
 Route::get('/tasks/{id}', [TaskController::class, 'show']);
+
+// 編集フォームの表示
+Route::get('/tasks/{id}/edit', [TaskController::class, 'edit']);
+
+// タスクの更新
+Route::put('/tasks/{id}', [TaskController::class, 'update']);
