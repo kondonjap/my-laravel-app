@@ -78,7 +78,21 @@ class TaskController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        // 入力データをバリデーション
+        $request->validate([
+            'title' => 'required|max:255',
+            'description' => 'nullable|max:1000',
+        ]);
+
+        // 指定されたIDのタスクを取得して更新
+        $task = Task::findOrFail($id);
+        $task->update([
+            'title' => $request->input('title'),
+            'description' => $request->input('description'),
+        ]);
+
+        // タスク一覧ページにリダイレクト
+        return redirect('/tasks')->with('success', 'タスクが更新されました！');
     }
 
     /**
