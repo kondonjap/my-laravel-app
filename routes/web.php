@@ -40,3 +40,5 @@ Route::get('/tasks/{id}/edit', [TaskController::class, 'edit']);
 
 // タスクの更新
 Route::put('/tasks/{id}', [TaskController::class, 'update']);
+
+Route::delete('/tasks/{id}', [TaskController::class, 'destroy']);

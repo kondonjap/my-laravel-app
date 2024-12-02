@@ -101,7 +101,7 @@ class TaskController extends Controller
     public function destroy(string $id)
     {
         // 指定されたIDのレコードを取得
-        $post = Post::find($id);
+        $post = Task::find($id);
 
         // レコードが存在するか確認
         if (!$post) {
