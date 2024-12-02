@@ -100,6 +100,22 @@ class TaskController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        // 指定されたIDのレコードを取得
+        $post = Post::find($id);
+
+        // レコードが存在するか確認
+        if (!$post) {
+            return response()->json([
+                'message' => 'Resource not found.'
+            ], 404);
+        }
+
+        // レコードを削除
+        $post->delete();
+
+        // 成功メッセージを返す
+        return response()->json([
+            'message' => 'Resource deleted successfully.'
+        ], 200);
     }
 }
